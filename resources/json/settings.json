@@ -45,56 +45,54 @@
       "value": [
         [ "", "Default" ],
         [ "auto", "Multilingual" ],
-        [ "sq", "Albanian" ],
         [ "am", "Amharic" ],
         [ "ar", "Arabic" ],
-        [ "bn", "Bengali" ],
         [ "bg", "Bulgarian" ],
         [ "br", "Portuguese - Brasilian" ],
-        [ "my", "Burmese" ],
-        [ "zh", "Chinese" ],
-        [ "zt", "Chinese - Traditional" ],
-        [ "hr", "Croatian" ],
         [ "cs", "Czech" ],
         [ "da", "Danish" ],
-        [ "nl", "Dutch" ],
-        [ "en", "English" ],
-        [ "et", "Estonian" ],
-        [ "tl", "Filipino" ],
-        [ "fi", "Finnish" ],
-        [ "fr", "French" ],
-        [ "ka", "Georgian" ],
         [ "de", "German" ],
         [ "el", "Greek" ],
+        [ "es", "Spanish" ],
+        [ "et", "Estonian" ],
+        [ "fa", "Persian" ],
+        [ "fi", "Finnish" ],
+        [ "fr", "French" ],
         [ "he", "Hebrew" ],
         [ "hi", "Hindi" ],
+        [ "hr", "Croatian" ],
         [ "hu", "Hungarian" ],
-        [ "is", "Icelandic" ],
         [ "id", "Indonesian" ],
+        [ "is", "Icelandic" ],
         [ "it", "Italian" ],
         [ "ja", "Japanese" ],
+        [ "ka", "Georgian" ],
         [ "ko", "Korean" ],
         [ "lt", "Lithuanian" ],
         [ "mk", "Macedonian" ],
-        [ "ms", "Malay" ],
         [ "mn", "Mongolian" ],
+        [ "ms", "Malay" ],
+        [ "my", "Burmese" ],
+        [ "nl", "Dutch" ],
         [ "no", "Norwegian" ],
         [ "pa", "Punjabi - Gurmurkhi" ],
-        [ "fa", "Persian" ],
         [ "pl", "Polish" ],
         [ "pt", "Portuguese" ],
         [ "ro", "Romanian" ],
         [ "ru", "Russian" ],
-        [ "sr", "Serbian" ],
         [ "sk", "Slovak" ],
         [ "sl", "Slovenian" ],
-        [ "es", "Spanish" ],
+        [ "sq", "Albanian" ],
+        [ "sr", "Serbian" ],
         [ "su", "Sundanese" ],
         [ "sv", "Swedish" ],
         [ "th", "Thai" ],
+        [ "tl", "Filipino" ],
         [ "tr", "Turkish" ],
         [ "uk", "Ukrainian" ],
-        [ "vi", "Vietnamese" ]
+        [ "vi", "Vietnamese" ],
+        [ "zh", "Chinese" ],
+        [ "zt", "Chinese - Traditional" ]
       ]
     },
     {
@@ -235,7 +233,7 @@
       "id": "welcome-message",
       "title": "Welcome message",
       "content": "Send a message to new users when they visit the website for the first time.",
-      "help": "https://board.support/docs/#welcome-message",
+    
       "value": [
         {
           "type": "checkbox",
@@ -283,7 +281,7 @@
       "id": "follow-message",
       "title": "Follow up message",
       "content": "If no agents respond within the specified time interval, a message will be sent to request the user's details, such as their email.",
-      "help": "https://board.support/docs/#follow-up-message",
+      
       "value": [
         {
           "type": "checkbox",
@@ -376,7 +374,7 @@
       "id": "rating-message",
       "title": "Rating",
       "content": "Display the feedback form to rate the conversation when it is archived.",
-      "help": "https://board.support/docs/#rating",
+      
       "value": [
         {
           "type": "checkbox",
@@ -395,7 +393,7 @@
       "id": "chat-timetable",
       "title": "Offline message",
       "content": "Notify the user when their message is sent outside of the scheduled office hours or all agents are offline.",
-      "help": "https://board.support/docs/#offline-message",
+      
       "value": [
         {
           "type": "checkbox",
@@ -463,7 +461,7 @@
       "id": "popup-message",
       "title": "Popup message",
       "content": "Show a pop-up notification to all users.",
-      "help": "https://board.support/docs/#pop-up-message",
+     
       "value": [
         {
           "type": "checkbox",
@@ -497,7 +495,7 @@
       "id": "privacy",
       "title": "Privacy message",
       "content": "Before initiating the chat, the user must accept a privacy message in order to gain access.",
-      "help": "https://board.support/docs/#privacy-message",
+      
       "value": [
         {
           "type": "checkbox",
@@ -590,8 +588,7 @@
       "type": "checkbox",
       "id": "admin-auto-translations",
       "title": "Automatically translate admin area",
-      "content": "Automatically translate the admin area to match the agent profile language or browser language.",
-      "help": "https://board.support/docs/#multilingual-admin"
+      "content": "Automatically translate the admin area to match the agent profile language or browser language."
     },
     {
       "type": "checkbox",
@@ -659,7 +656,7 @@
       "id": "supervisors",
       "title": "Supervisors",
       "content": "Set which actions to allow supervisors.",
-      "help": "https://board.support/docs/#agents",
+      
       "items": [
         {
           "type": "text",
@@ -757,12 +754,12 @@
       "id": "notes-settings",
       "title": "Notes settings",
       "content": "Manage the notes settings.",
-      "help": "https://board.support/docs/#notes",
+      
       "value": [
         {
           "type": "checkbox",
           "id": "notes-hide-name",
-          "title": "Hide note information"
+          "title": "Hide username"
         }
       ]
     },
@@ -771,7 +768,7 @@
       "id": "tags-settings",
       "title": "Tags settings",
       "content": "Manage the tags settings.",
-      "help": "https://board.support/docs/#tags",
+      
       "value": [
         {
           "type": "checkbox",
@@ -790,7 +787,7 @@
       "id": "tags",
       "title": "Tags",
       "content": "Add and manage tags.",
-      "help": "https://board.support/docs/#tags",
+      
       "items": [
         {
           "type": "text",
@@ -809,7 +806,7 @@
       "id": "transcript",
       "title": "Transcript",
       "content": "Transcript settings.",
-      "help": "https://board.support/docs/#transcript",
+      
       "value": [
         {
           "type": "select",
@@ -841,7 +838,7 @@
       "id": "user-table-extra-columns",
       "title": "Users table additional columns",
       "content": "Displays additional columns in the user table. Enter the name of the fields to add.",
-      "help": "https://board.support/docs/#user-table-extra-columns",
+      
       "items": [
         {
           "type": "text",
@@ -855,7 +852,7 @@
       "id": "saved-replies",
       "title": "Saved replies",
       "content": "Add and manage saved replies that can be used by agents in the chat editor. Saved replies can be printed by typing # followed by the reply name plus space. Use \u005cn to do a line break.",
-      "help": "https://board.support/docs/#saved-replies",
+     
       "items": [
         {
           "type": "text",
@@ -885,8 +882,7 @@
       "type": "text",
       "id": "manifest-url",
       "title": "Manifest file URL",
-      "content": "Use this option to change the PWA icon. See the docs for more details.",
-      "help": "https://board.support/docs/#pwa"
+      "content": "Use this option to change the PWA icon. See the docs for more details."
     },
     {
       "type": "color",
@@ -907,7 +903,7 @@
       "id": "sound-settings",
       "title": "Sound settings",
       "content": "Play a sound for new messages and conversations.",
-      "help": "https://board.support/docs/#sound",
+     
       "value": [
         {
           "type": "checkbox",
@@ -1002,8 +998,7 @@
       "type": "checkbox",
       "id": "online-users-notification",
       "title": "Online users notification",
-      "content": "Show a notification and play a sound when a new user is online.",
-      "help": "https://board.support/docs/#users-info"
+      "content": "Show a notification and play a sound when a new user is online."
     },
     {
       "type": "checkbox",
@@ -1040,7 +1035,7 @@
       "id": "push-notifications",
       "title": "Push notifications",
       "content": "Push notifications settings.",
-      "help": "https://board.support/docs/#push",
+     
       "value": [
         {
           "type": "select",
@@ -1106,15 +1101,13 @@
       "type": "checkbox",
       "id": "notify-agent-email",
       "title": "Agent email notifications",
-      "content": "Send an email to an agent when a user replies and the agent is offline. An email is automatically sent to all agents for new conversations.",
-      "help": "https://board.support/docs/#email"
+      "content": "Send an email to an agent when a user replies and the agent is offline. An email is automatically sent to all agents for new conversations."
     },
     {
       "type": "checkbox",
       "id": "notify-user-email",
       "title": "User email notifications",
-      "content": "Send an email to the user when an agent replies and the user is offline.",
-      "help": "https://board.support/docs/#email"
+      "content": "Send an email to the user when an agent replies and the user is offline."
     },
     {
       "type": "checkbox",
@@ -1126,8 +1119,7 @@
       "type": "checkbox",
       "id": "notify-email-cron",
       "title": "Email notifications via cron job",
-      "content": "Enable this option if email notifications are sent via cron job.",
-      "help": "https://board.support/docs/#email-cron"
+      "content": "Enable this option if email notifications are sent via cron job."
     },
     {
       "type": "multi-input",
@@ -1231,7 +1223,7 @@
       "id": "email-piping",
       "title": "Email piping",
       "content": "Email piping server information and more settings.",
-      "help": "https://board.support/docs/#email-piping",
+     
       "items": [
         {
           "type": "checkbox",
@@ -1273,11 +1265,6 @@
           "type": "checkbox",
           "id": "email-piping-all",
           "name": "Convert all emails"
-        },
-        {
-          "type": "checkbox",
-          "id": "email-piping-one-conversation",
-          "name": "One conversation per user"
         },
         {
           "type": "checkbox",
@@ -1324,7 +1311,7 @@
       "id": "sms",
       "title": "Text message notifications",
       "content": "Enter your Twilio account details. You can use text and the following merge fields: {message}, {recipient_name}, {sender_name}, {recipient_email}, {sender_email}, {conversation_url_parameter}.",
-      "help": "https://board.support/docs/#sms",
+      
       "value": [
         {
           "type": "checkbox",
@@ -1403,8 +1390,7 @@
         [ "registration-login", "Registration and login form" ],
         [ "registration", "Registration form" ],
         [ "login", "Login form" ]
-      ],
-      "help": "https://board.support/docs/#registration"
+      ]
     },
     {
       "type": "checkbox",
@@ -1428,8 +1414,7 @@
       "type": "text",
       "id": "login-verification-url",
       "title": "Login verification URL",
-      "content": "Send login details to the specified URL and allow access only if the response is positive.",
-      "help": "https://board.support/docs/#login-verification-url"
+      "content": "Send login details to the specified URL and allow access only if the response is positive."
     },
     {
       "type": "multi-input",
@@ -1666,7 +1651,7 @@
       "id": "envato-validation",
       "title": "Envato purchase code validation",
       "content": "Request a valid Envato purchase code for registration.",
-      "help": "https://board.support/docs/#envato-validation",
+      
       "value": [
         {
           "type": "checkbox",
@@ -1998,8 +1983,7 @@
       "title": "Import users",
       "content": "Import users from a CSV file.",
       "button-text": "Import users",
-      "button-url": "#",
-      "help": "https://board.support/docs/#import-users"
+      "button-url": "#"
     }
   ],
   "design": [
@@ -2139,7 +2123,7 @@
       "id": "webhooks",
       "title": "Webhooks",
       "content": "Webhooks are information sent in background to a unique URL defined by you when something happens.",
-      "help": "https://board.support/docs/api/web#Webhooks",
+     
       "value": [
         {
           "type": "checkbox",
@@ -2174,14 +2158,15 @@
       "type": "checkbox",
       "id": "auto-updates",
       "title": "Automatic updates",
-      "content": "Automatically check and install new updates. A valid Envato Purchase Code and valid apps's license keys are required."
+      "content": "Automatically check and install new updates. A valid Envato Purchase Code and valid apps's license keys are required.",
+       "value": false
     },
     {
       "type": "multi-input",
       "id": "pusher",
       "title": "Pusher",
       "content": "Improve chat performance with Pusher and WebSockets. This setting stops all AJAX/HTTP real-time requests that slow down your server and use instead the WebSockets.",
-      "help": "https://board.support/docs/#pusher",
+     
       "value": [
         {
           "type": "checkbox",
@@ -2215,7 +2200,7 @@
       "id": "newsletter",
       "title": "Newsletter",
       "content": "Subscribe users to your preferred newsletter service when they provide an email.",
-      "help": "https://board.support/docs/#newsletter",
+      
       "value": [
         {
           "type": "checkbox",
@@ -2259,8 +2244,7 @@
       "type": "timetable",
       "id": "timetable",
       "title": "Scheduled office hours",
-      "content": "Set the default office hours for when agents are shown as available. These settings are also used for all other settings that rely on office hours.",
-      "help": "https://board.support/docs/#office-hours"
+      "content": "Set the default office hours for when agents are shown as available. These settings are also used for all other settings that rely on office hours."
     },
     {
       "type": "number",
@@ -2273,7 +2257,7 @@
       "id": "departments-settings",
       "title": "Departments settings",
       "content": "Manage here the departments settings.",
-      "help": "https://board.support/docs/#departments",
+      
       "value": [
         {
           "type": "checkbox",
@@ -2344,7 +2328,7 @@
       "id": "queue",
       "title": "Queue",
       "content": "Distribute conversations proportionately between agents and notify visitors of their position within the queue.",
-      "help": "https://board.support/docs/#queue-routing",
+      
       "value": [
         {
           "type": "checkbox",
@@ -2383,7 +2367,7 @@
       "id": "routing",
       "title": "Routing",
       "content": "Distribute conversations proportionately between agents, and block an agent from viewing the conversations of the other agents.",
-      "help": "https://board.support/docs/#queue-routing",
+      
       "value": [
         {
           "type": "checkbox",
@@ -2402,7 +2386,7 @@
       "id": "agent-hide-conversations",
       "title": "Hide conversations of other agents",
       "content": "Prevent agents from viewing conversations assigned to other agents. This setting is automatically enabled if routing or queue is active.",
-      "help": "https://board.support/docs/#manual-routing",
+     
       "value": [
         {
           "type": "checkbox",
@@ -2432,7 +2416,7 @@
       "id": "rich-messages",
       "title": "Rich messages",
       "content": "Rich messages are code snippets that can be utilized within a chat message. They can contain HTML code and are automatically rendered in the chat. Rich messages can be used with the following syntax: [rich-message-name]. There are a tonne of built-in rich messages to choose from.",
-      "help": "https://board.support/docs/#rich-messages",
+      
       "items": [
         {
           "type": "text",
@@ -2480,7 +2464,7 @@
       "id": "amazon-s3",
       "title": "Amazon S3",
       "content": "Upload attachments to Amazon S3.",
-      "help": "https://board.support/docs/#aws",
+      
       "value": [
         {
           "type": "checkbox",
@@ -2513,15 +2497,14 @@
       "type": "checkbox",
       "id": "logs",
       "title": "Logs",
-      "content": "Enable logging of agent activity.",
-      "help": "https://board.support/docs/#logs"
+      "content": "Enable logging of agent activity."
     },
     {
       "type": "button",
       "id": "system-requirements",
       "title": "System requirements",
       "content": "Check the server configurations and make sure it has all the requirements.",
-      "help": "https://board.support/docs/#requirements",
+      
       "button-text": "Check Requirements",
       "button-url": "#"
     },
@@ -2599,8 +2582,7 @@
       "type": "checkbox",
       "id": "articles-url-rewrite",
       "title": "URL rewrite",
-      "content": "Change the default URLs with user-friendly URLs.",
-      "help": "https://board.support/docs/#articles-url-rewrite"
+      "content": "Change the default URLs with user-friendly URLs."
     }
   ]
 }

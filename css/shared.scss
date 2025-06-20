@@ -2934,10 +2934,6 @@ div ul.sb-menu, .sb-select ul {
         .sb-card-description {
             height: 63px;
             overflow: hidden;
-
-            &:empty {
-                display: none;
-            }
         }
 
         .sb-card-btn {
@@ -2947,7 +2943,7 @@ div ul.sb-menu, .sb-select ul {
 
     .sb-slider-images {
         margin: -12px;
-        border-radius: 6px;
+        border-radius: 4px;
         background: #000;
         cursor: pointer;
 

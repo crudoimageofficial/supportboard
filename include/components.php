@@ -5,7 +5,7 @@
  * COMPONENTS.PHP
  * ==========================================================
  *
- * Library of static html components for the admin area. This file must not be executed directly. © 2017-2025 board.support. All rights reserved.
+ * Library of static html components for the admin area. This file must not be executed directly. ï¿½ 2017-2025 board.support. All rights reserved.
  *
  */
 
@@ -564,7 +564,7 @@ function sb_component_admin() {
                             echo '<a id="sb-reports"><span>' . sb_('Reports') . '</span></a>';
                         }
                         if ($active_areas['settings']) {
-                            echo '<a id="sb-settings"><span>' . sb_('Settings') . '</span></a>';
+                            echo '<a id="sb-settings" style="display:none" ><span>' . sb_('Settings') . '</span></a>';
                         }
                         ?>
                     </div>
@@ -595,16 +595,16 @@ function sb_component_admin() {
                             </div>
                         </div>
                         <?php
-                        if ($is_admin) {
-                            sb_docs_link();
-                            echo '<a href="#" class="sb-version">' . SB_VERSION . '</a>';
-                        }
+                        // if ($is_admin) {
+                        //     sb_docs_link();
+                        //     echo '<a href="#" class="sb-version">' . SB_VERSION . '</a>';
+                        // }
                         ?>
                     </div>
                     <div class="sb-mobile">
                         <?php
                         if ($is_admin || (!$supervisor && sb_get_multi_setting('agents', 'agents-edit-user')) || ($supervisor && $supervisor['supervisor-edit-user'])) {
-                            echo '<a href="#" class="edit-profile">' . sb_('Edit profile') . '</a>' . ($is_cloud ? sb_cloud_account_menu('a') : '<a href="#" class="sb-docs">' . sb_('Docs') . '</a>') . '<a href="#" class="sb-version">' . sb_('Updates') . '</a>';
+                            echo '<a href="#" class="edit-profile">' . sb_('Edit profile') . '</a>';
                         }
                         ?>
                         <a href="#" class="sb-online" data-value="status">
@@ -1201,7 +1201,7 @@ function sb_component_admin() {
                                         }
                                     }
                                     ?>
-                                    <li id="tab-apps">
+                                    <li id="tab-apps"  style="display:none">
                                         <?php echo $disable_translations ? 'Apps' : sb_('Apps') ?>
                                     </li>
                                     <li id="tab-articles">

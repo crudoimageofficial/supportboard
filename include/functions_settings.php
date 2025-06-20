@@ -272,7 +272,7 @@ function sb_js_admin() {
         'tags_show' => sb_get_multi_setting('tags-settings', 'tags-show'),
         'departments' => sb_get_setting('departments'),
         'departments_show' => sb_get_multi_setting('departments-settings', 'departments-show-list'),
-        'notes_hide_information' => sb_get_multi_setting('notes-settings', 'notes-hide-name'),
+        'notes_hide_name' => sb_get_multi_setting('notes-settings', 'notes-hide-name'),
         'visitor_default_name' => sb_get_setting('visitor-default-name'),
         'hide_conversation_details' => sb_get_setting('hide-conversation-details'),
         'visitors_registration' => sb_get_setting('visitors-registration') || sb_get_setting('online-users-notification')
@@ -325,7 +325,7 @@ function sb_js_admin() {
     } else {
         $code .= 'var SB_ACTIVE_AGENT = { id: "", full_name: "", user_type: "", profile_image: "", email: "" };';
     }
-    if ($active_user && $is_agent && ($routing_type == 'queue' || $routing_type == 'routing')) {
+    if ($active_user && $is_agent && $routing_type) {
         sb_routing_assign_conversations_active_agent($routing_type == 'queue');
     }
     if (defined('SB_WP')) {
@@ -1286,7 +1286,7 @@ function sb_init_articles_admin() {
         require_once(SB_CLOUD_PATH . '/account/functions.php');
         $cloud_chat_id = account_chat_id(get_active_account_id());
     }
-    return [$articles, sb_get_articles_categories(), $articles_translations, sb_get_articles_page_url(), sb_is_articles_url_rewrite(false), $cloud_chat_id];
+    return [$articles, sb_get_articles_categories(), $articles_translations, sb_get_articles_page_url(), sb_is_articles_url_rewrite(), $cloud_chat_id];
 }
 
 function sb_articles_excerpt($articles) {
@@ -1319,8 +1319,8 @@ function sb_get_articles_page_url() {
     return trim(sb_get_setting('articles-page-url', sb_defined('ARTICLES_URL')));
 }
 
-function sb_is_articles_url_rewrite($check_referrer = true) {
-    return sb_get_setting('articles-url-rewrite') || (defined('ARTICLES_URL') && (!$check_referrer || empty($_SERVER['HTTP_REFERER']) || strpos(ARTICLES_URL, $_SERVER['HTTP_REFERER'])) && (!sb_get_setting('articles-page-url') || strpos(ARTICLES_URL, parse_url(sb_get_setting('articles-page-url'), PHP_URL_HOST))));
+function sb_is_articles_url_rewrite() {
+    return sb_get_setting('articles-url-rewrite') || (defined('ARTICLES_URL') && (empty($_SERVER['HTTP_REFERER']) || strpos(ARTICLES_URL, $_SERVER['HTTP_REFERER'])) && (!sb_get_setting('articles-page-url') || strpos(ARTICLES_URL, parse_url(sb_get_setting('articles-page-url'), PHP_URL_HOST))));
 }
 
 ?>

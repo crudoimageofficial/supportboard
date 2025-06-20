@@ -408,7 +408,7 @@ function sb_get_notes($conversation_id) {
 function sb_add_note($conversation_id, $user_id, $name, $message) {
     $notes = sb_get_notes($conversation_id);
     $id = rand(0, 99999);
-    array_push($notes, ['id' => $id, 'user_id' => $user_id, 'name' => $name, 'message' => sb_sanatize_string($message), 'date' => sb_gmt_now()]);
+    array_push($notes, ['id' => $id, 'user_id' => $user_id, 'name' => $name, 'message' => sb_sanatize_string($message)]);
     $response = sb_save_external_setting('notes-' . $conversation_id, $notes);
     return $response ? $id : $response;
 }
@@ -419,7 +419,6 @@ function sb_update_note($conversation_id, $user_id, $note_id, $message) {
         if ($notes[$i]['id'] == $note_id) {
             $notes[$i]['message'] = sb_sanatize_string($message);
             $notes[$i]['user_id'] = $user_id;
-            $notes[$i]['date'] = sb_gmt_now();
             return sb_save_external_setting('notes-' . $conversation_id, $notes);
         }
     }
@@ -1398,7 +1397,7 @@ function sb_messaging_platforms_functions($conversation_id, $message, $attachmen
                 $messages = sb_isset($response, 'messages', []);
                 $human_takeover = isset($response['human_takeover']);
             } else {
-                $response_open_ai = sb_open_ai_message($message, false, false, $conversation_id, ['messaging-app' => $source_name], $voice_message, $attachments);
+                $response_open_ai = sb_open_ai_message($message, false, false, $conversation_id, 'messaging-app', $voice_message, $attachments);
                 if ($response_open_ai[0]) {
                     $messages = is_string($response_open_ai[1]) ? [['message' => $response_open_ai[1], 'attachments' => sb_isset($response_open_ai, 6)]] : (isset($response_open_ai[1]['message']) ? [$response_open_ai[1]] : sb_isset($response_open_ai[1], 'messages', is_array($response_open_ai[1]) ? $response_open_ai[1] : []));
                     $human_takeover = !empty($response_open_ai[3]);
@@ -1448,7 +1447,7 @@ function sb_messaging_platforms_functions($conversation_id, $message, $attachmen
             array_push($bot_messages, 'privacy');
         }
         $count = count($bot_messages);
-        $last_user_message = $count ? sb_isset(sb_get_last_message($conversation_id, $message, $user_id), 'message') : false;
+        $last_user_message = $count ? sb_get_last_message($conversation_id, $message, $user_id)['message'] : false;
         for ($i = 0; $i < $count; $i++) {
             $bot_message = $i == 0 || empty($user['email']) ? sb_execute_bot_message($bot_messages[$i], $conversation_id, $last_user_message) : false;
             $message_2 = false;

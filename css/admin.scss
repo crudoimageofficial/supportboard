@@ -1222,15 +1222,7 @@ td.sb-offline:after {
                 }
             }
 
-            > span {
-                font-weight: 400;
-                font-size: 12px;
-                float: right;
-                opacity: .7;
-                transition-delay: 1s;
-            }
-
-            &.sb-note-hide-info {
+            &.sb-noname-note {
                 margin-bottom: 0;
 
                 & + span {
@@ -1246,15 +1238,8 @@ td.sb-offline:after {
             opacity: .9;
         }
 
-        &:hover {
-            > span i {
-                opacity: 1;
-            }
-
-            > span > span {
-                opacity: 0;
-                transition: none;
-            }
+        &:hover > span i {
+            opacity: 1;
         }
 
         & + div {

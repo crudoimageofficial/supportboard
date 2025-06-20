@@ -210,7 +210,7 @@ function sb_ajax_execute() {
         case 'transcript':
             return sb_json_response(sb_transcript($_POST['conversation_id'], sb_post('type')));
         case 'update-user-and-message':
-            return sb_json_response(sb_update_user_and_message($_POST['user_id'], sb_post('settings', []), sb_post('settings_extra', []), sb_post('message_id', ''), sb_post('message', ''), sb_post('payload'), sb_post('skip_otp')));
+            return sb_json_response(sb_update_user_and_message($_POST['user_id'], sb_post('settings', []), sb_post('settings_extra', []), sb_post('message_id', ''), sb_post('message', ''), sb_post('payload')));
         case 'get-rich-message':
             return sb_json_response(sb_get_rich_message($_POST['name'], sb_post('settings')));
         case 'create-email':

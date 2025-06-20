@@ -12,7 +12,7 @@
 
 (function ($) {
 
-    var version = '3.8.1';
+    var version = '3.8.0';
     var main;
     var global;
     var upload_target;
@@ -1859,7 +1859,7 @@
             if (message.includes('www.')) {
                 message = message.replaceAll('www.', 'https://www.').replaceAll('https://https:', 'https:').replaceAll('http://https:', 'http:');
             }
-            let replace = [['href="http', '[L1]'], ['src="http', '[L2]'], ['url("http', '[L3]'], ['url(\'http', '[L4]'], ['extra="http', '[L5]'], ['data-link="http', '[L6]'], ['data-value="http', '[L7]']];
+            let replace = [['href="http', '[L1]'], ['src="http', '[L2]'], ['url("http', '[L3]'], ['url(\'http', '[L4]'], ['extra="http', '[L5]'], ['data-link="http', '[L6]']];
             for (var i = 0; i < replace.length; i++) {
                 message = message.replaceAll(replace[i][0], replace[i][1]);
             }
@@ -3352,7 +3352,7 @@
                         active_notifications.push(this.notifications[i]);
                     }
                 }
-                if (!admin && check && ['0', 0].includes(this.conversation.status_code)) {
+                if (!admin && check && ['0', '2', 0, 2].includes(this.conversation.status_code)) {
                     this.setConversationStatus(1);
                 }
                 this.notifications = active_notifications;
@@ -4037,9 +4037,8 @@
                     }
                 } else if ($(upload_target).hasClass('sb-input-image')) {
                     let image = $(upload_target).find('.image');
-                    let image_url = image.attr('data-value');
-                    if (image_url && !image_url.includes('media/user.svg')) {
-                        SBF.ajax({ function: 'delete-file', path: image_url});
+                    if (image.attr('data-value')) {
+                        SBF.ajax({ function: 'delete-file', path: image.attr('data-value') });
                     }
                     image.attr('data-value', '').css('background-image', '');
                     setTimeout(() => {
@@ -4691,7 +4690,7 @@
                         }
                         payload['rich-messages'][rich_message_id] = { type: type, result: settings };
                         payload['event'] = 'update-user';
-                        parameters = { function: 'update-user-and-message', settings: user_settings, settings_extra: settings_extra, payload: payload, skip_otp: true };
+                        parameters = { function: 'update-user-and-message', settings: user_settings, settings_extra: settings_extra, payload: payload };
                         dialogflow_parameters = { settings: user_settings, settings_extra: settings_extra };
                         break;
                     case 'registration':
@@ -5899,7 +5898,7 @@
                 SBF.event('SBReady');
             }
             $(chat_editor).on('keydown', 'textarea', function (e) {
-                if (e.which == 13 && (!tickets || CHAT_SETTINGS.tickets_enter_button) && !mobile && !e.ctrlKey && !e.shiftKey) {
+                if (e.which == 13 && (!tickets || CHAT_SETTINGS.tickets_enter_button) && (!admin || (!mobile && !e.ctrlKey && !e.shiftKey))) {
                     SBChat.submit();
                     e.preventDefault;
                     return false;
